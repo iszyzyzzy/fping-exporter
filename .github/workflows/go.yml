@@ -47,17 +47,10 @@ jobs:
     steps:
       - name: Download all artifacts
         uses: actions/download-artifact@v4
-      - name: Build
-        run: echo ${{ github.sha }} > Release.txt
-      - name: Test
-        run: cat Release.txt
-      - name: Test2
-        run: ls -la
       - name: Create Release
         uses: softprops/action-gh-release@v2
         with:
           files: |
-            fping-exporter-*
-            Release.txt
+            fping-exporter-*/*
         env:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}

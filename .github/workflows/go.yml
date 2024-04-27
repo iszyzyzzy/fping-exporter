@@ -53,6 +53,8 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           files: |
-            fping-exporter-*
+            fping-exporter-linux-amd64
+            fping-exporter-linux-arm64
+            fping-exporter-windows-amd64.exe
         env:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
